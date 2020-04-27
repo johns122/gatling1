@@ -18,6 +18,11 @@ pipeline {
             steps {
                 sh 'mvn gatling:test'
             }
+            post {
+                always {
+                    gatlingArchive()
+                }
+            }
         }
     }
 }
